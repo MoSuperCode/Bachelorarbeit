@@ -202,11 +202,11 @@ Change: Added `updated_at` column to `carts` table, a `deleteInactiveCarts()` fu
 
 | VUs | Monolith p50 (ms) | Monolith p95 (ms) | Monolith RPS | MS p50 (ms) | MS p95 (ms) | MS RPS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 10 | — | — | — | — | — | — |
-| 25 | — | — | — | — | — | — |
-| 50 | — | — | — | — | — | — |
-| 100 | — | — | — | — | — | — |
-| 200 | — | — | — | — | — | — |
+| 10 | 6.5 | 9.7 | 9.9 | — | — | — |
+| 25 | 6.1 | 10.6 | 24.8 | — | — | — |
+| 50 | 6.0 | 12.7 | 49.6 | — | — | — |
+| 100 | 6.7 | 15.8 | 99.1 | — | — | — |
+| 200 | 5.9 | 14.5 | 198.3 | — | — | — |
 
 ---
 
@@ -216,11 +216,11 @@ Change: Added `updated_at` column to `carts` table, a `deleteInactiveCarts()` fu
 
 | VUs | Monolith p50 (ms) | Monolith p95 (ms) | Monolith RPS | MS p50 (ms) | MS p95 (ms) | MS RPS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 10 | — | — | — | — | — | — |
-| 25 | — | — | — | — | — | — |
-| 50 | — | — | — | — | — | — |
-| 100 | — | — | — | — | — | — |
-| 200 | — | — | — | — | — | — |
+| 10 | 13.5 | 20.2 | 11.6 | — | — | — |
+| 25 | 15.0 | 24.8 | 37.5 | — | — | — |
+| 50 | 16.7 | 30.7 | 58.3 | — | — | — |
+| 100 | 13.5 | 35.5 | 123.6 | — | — | — |
+| 200 | 9.4 | 55.9 | 296.0 | — | — | — |
 
 ---
 
@@ -230,11 +230,11 @@ Change: Added `updated_at` column to `carts` table, a `deleteInactiveCarts()` fu
 
 | VUs | Monolith p50 (ms) | Monolith p95 (ms) | Monolith RPS | MS p50 (ms) | MS p95 (ms) | MS RPS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 10 | — | — | — | — | — | — |
-| 25 | — | — | — | — | — | — |
-| 50 | — | — | — | — | — | — |
-| 100 | — | — | — | — | — | — |
-| 200 | — | — | — | — | — | — |
+| 10 | 5.0 | 9.7 | 12.3 | — | — | — |
+| 25 | 4.4 | 9.8 | 30.6 | — | — | — |
+| 50 | 3.8 | 10.5 | 61.0 | — | — | — |
+| 100 | 3.6 | 11.1 | 122.8 | — | — | — |
+| 200 | 2.5 | 9.1 | 245.3 | — | — | — |
 
 ---
 
@@ -244,9 +244,9 @@ Change: Added `updated_at` column to `carts` table, a `deleteInactiveCarts()` fu
 
 | Script | VUs | Monolith Error Rate | MS Error Rate |
 | --- | --- | --- | --- |
-| load_read | 10–200 | — | — |
-| load_write | 10–200 | — | — |
-| load_mixed | 10–200 | — | — |
+| load_read | 10–200 | 0.09% | — |
+| load_write | 10–200 | 0.04% | — |
+| load_mixed | 10–200 | 0.05% | — |
 
 ---
 
