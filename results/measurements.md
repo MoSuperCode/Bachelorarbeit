@@ -1,3 +1,17 @@
+# Hardware & Runtime Environment
+
+| Eigenschaft | Wert |
+|-------------|------|
+| **Modell** | MacBook Air (M2, 2022) |
+| **Chip** | Apple M2 (8 Kerne: 4 Performance, 4 Efficiency) |
+| **RAM** | 8 GB |
+| **OS** | macOS 14.6.1 |
+| **Docker-Ressourcen** | 1 CPU / 1 GB RAM pro Container (definiert in Compose-Dateien) |
+| **Node.js** | 20 (Alpine) |
+| **PostgreSQL** | 15 (Alpine) |
+
+---
+
 # SQ1 – Strukturelle Komplexität: Baseline-Messungen
 
 ## Metrik-Definitionen
@@ -28,7 +42,7 @@
 
 ## Microservices
 
-**Git-Commit:** *(wird nach Commit eingetragen)*
+**Git-Commit:** `f1c5be7`
 
 | Metrik | Wert |
 |--------|------|
