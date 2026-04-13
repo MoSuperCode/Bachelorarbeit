@@ -170,3 +170,86 @@ Change: Added `updated_at` column to `carts` table, a `deleteInactiveCarts()` fu
 | S5 – Behavioral change | 3 | 3 | App + DB | cart-service + DB |
 
 **Key finding:** The number of files changed per scenario is identical across both architectures in all five cases. The structural difference lies exclusively in redeployment scope: the monolith always requires a full application restart, while microservices allow targeted redeployment of only the affected service — leaving all other services running without interruption.
+
+---
+
+## SQ3 – Performance Behaviour
+
+### Test Configuration
+
+| Parameter | Value |
+| --- | --- |
+| Tool | k6 |
+| Duration per run | 60s |
+| Repetitions per configuration | 5 |
+| VU levels | 10, 25, 50, 100, 200 |
+| Workload scripts | `load_read.js`, `load_write.js`, `load_mixed.js` |
+| Metrics collected | p50 (ms), p95 (ms), throughput (req/s), error rate (%) |
+
+### Workload Definitions
+
+| Script | Traffic Pattern | Endpoints |
+| --- | --- | --- |
+| `load_read.js` | 100% GET /products | Monolith: `GET /api/products` — Microservices: `GET /products` (port 3001) |
+| `load_write.js` | POST /cart → POST /orders per VU | Monolith: ports 3000 — Microservices: ports 3002 + 3003 |
+| `load_mixed.js` | 60% browse / 30% add-to-cart / 10% checkout | All endpoints, realistic distribution |
+
+---
+
+### Read-Heavy Results (load_read.js)
+
+*To be filled after running `./scripts/run_performance_suite.sh load_read`*
+
+| VUs | Monolith p50 (ms) | Monolith p95 (ms) | Monolith RPS | MS p50 (ms) | MS p95 (ms) | MS RPS |
+| --- | --- | --- | --- | --- | --- | --- |
+| 10 | — | — | — | — | — | — |
+| 25 | — | — | — | — | — | — |
+| 50 | — | — | — | — | — | — |
+| 100 | — | — | — | — | — | — |
+| 200 | — | — | — | — | — | — |
+
+---
+
+### Write-Heavy Results (load_write.js)
+
+*To be filled after running `./scripts/run_performance_suite.sh load_write`*
+
+| VUs | Monolith p50 (ms) | Monolith p95 (ms) | Monolith RPS | MS p50 (ms) | MS p95 (ms) | MS RPS |
+| --- | --- | --- | --- | --- | --- | --- |
+| 10 | — | — | — | — | — | — |
+| 25 | — | — | — | — | — | — |
+| 50 | — | — | — | — | — | — |
+| 100 | — | — | — | — | — | — |
+| 200 | — | — | — | — | — | — |
+
+---
+
+### Mixed Workload Results (load_mixed.js)
+
+*To be filled after running `./scripts/run_performance_suite.sh load_mixed`*
+
+| VUs | Monolith p50 (ms) | Monolith p95 (ms) | Monolith RPS | MS p50 (ms) | MS p95 (ms) | MS RPS |
+| --- | --- | --- | --- | --- | --- | --- |
+| 10 | — | — | — | — | — | — |
+| 25 | — | — | — | — | — | — |
+| 50 | — | — | — | — | — | — |
+| 100 | — | — | — | — | — | — |
+| 200 | — | — | — | — | — | — |
+
+---
+
+### SQ3 Error Rates
+
+*To be filled after test runs*
+
+| Script | VUs | Monolith Error Rate | MS Error Rate |
+| --- | --- | --- | --- |
+| load_read | 10–200 | — | — |
+| load_write | 10–200 | — | — |
+| load_mixed | 10–200 | — | — |
+
+---
+
+### SQ3 Key Finding
+
+*To be filled after analysis of `results/sq3_results.csv`*
