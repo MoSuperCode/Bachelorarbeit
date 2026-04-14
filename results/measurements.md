@@ -202,11 +202,11 @@ Change: Added `updated_at` column to `carts` table, a `deleteInactiveCarts()` fu
 
 | VUs | Monolith p50 (ms) | Monolith p95 (ms) | Monolith RPS | MS p50 (ms) | MS p95 (ms) | MS RPS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 10 | 6.5 | 9.7 | 9.9 | — | — | — |
-| 25 | 6.1 | 10.6 | 24.8 | — | — | — |
-| 50 | 6.0 | 12.7 | 49.6 | — | — | — |
-| 100 | 6.7 | 15.8 | 99.1 | — | — | — |
-| 200 | 5.9 | 14.5 | 198.3 | — | — | — |
+| 10 | 6.5 | 9.7 | 9.9 | 6.7 | 10.7 | 9.9 |
+| 25 | 6.1 | 10.6 | 24.8 | 6.3 | 11.5 | 24.8 |
+| 50 | 6.0 | 12.7 | 49.6 | 7.2 | 13.6 | 49.6 |
+| 100 | 6.7 | 15.8 | 99.1 | 7.4 | 15.3 | 99.1 |
+| 200 | 5.9 | 14.5 | 198.3 | 6.8 | 14.7 | 198.3 |
 
 ---
 
@@ -216,11 +216,11 @@ Change: Added `updated_at` column to `carts` table, a `deleteInactiveCarts()` fu
 
 | VUs | Monolith p50 (ms) | Monolith p95 (ms) | Monolith RPS | MS p50 (ms) | MS p95 (ms) | MS RPS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 10 | 13.5 | 20.2 | 11.6 | — | — | — |
-| 25 | 15.0 | 24.8 | 37.5 | — | — | — |
-| 50 | 16.7 | 30.7 | 58.3 | — | — | — |
-| 100 | 13.5 | 35.5 | 123.6 | — | — | — |
-| 200 | 9.4 | 55.9 | 296.0 | — | — | — |
+| 10 | 13.5 | 20.2 | 11.6 | 20.3 | 38.2 | 14.8 |
+| 25 | 15.0 | 24.8 | 37.5 | 25.9 | 54.3 | 36.7 |
+| 50 | 16.7 | 30.7 | 58.3 | 19.6 | 78.4 | 73.4 |
+| 100 | 13.5 | 35.5 | 123.6 | 13.3 | 87.7 | 147.3 |
+| 200 | 9.4 | 55.9 | 296.0 | 8.3 | 48.3 | 296.7 |
 
 ---
 
@@ -230,11 +230,11 @@ Change: Added `updated_at` column to `carts` table, a `deleteInactiveCarts()` fu
 
 | VUs | Monolith p50 (ms) | Monolith p95 (ms) | Monolith RPS | MS p50 (ms) | MS p95 (ms) | MS RPS |
 | --- | --- | --- | --- | --- | --- | --- |
-| 10 | 5.0 | 9.7 | 12.3 | — | — | — |
-| 25 | 4.4 | 9.8 | 30.6 | — | — | — |
-| 50 | 3.8 | 10.5 | 61.0 | — | — | — |
-| 100 | 3.6 | 11.1 | 122.8 | — | — | — |
-| 200 | 2.5 | 9.1 | 245.3 | — | — | — |
+| 10 | 5.0 | 9.7 | 12.3 | 5.1 | 20.0 | 12.3 |
+| 25 | 4.4 | 9.8 | 30.6 | 4.3 | 18.5 | 30.6 |
+| 50 | 3.8 | 10.5 | 61.0 | 3.4 | 18.3 | 61.2 |
+| 100 | 3.6 | 11.1 | 122.8 | 2.5 | 17.2 | 122.5 |
+| 200 | 2.5 | 9.1 | 245.3 | 1.6 | 9.0 | 245.1 |
 
 ---
 
@@ -244,12 +244,18 @@ Change: Added `updated_at` column to `carts` table, a `deleteInactiveCarts()` fu
 
 | Script | VUs | Monolith Error Rate | MS Error Rate |
 | --- | --- | --- | --- |
-| load_read | 10–200 | 0.09% | — |
-| load_write | 10–200 | 0.04% | — |
-| load_mixed | 10–200 | 0.05% | — |
+| load_read | 10–200 | 0.09% | 0.09% |
+| load_write | 10–200 | 0.04% | 0.07% |
+| load_mixed | 10–200 | 0.05% | 0.00% |
 
 ---
 
 ### SQ3 Key Finding
 
-*To be filled after analysis of `results/sq3_results.csv`*
+**Read-heavy workloads:** Both architectures perform nearly identically. Monolith p95 ranged from 9.7–15.8 ms vs. microservices 10.7–15.3 ms — the inter-service overhead is negligible when only a single service is involved.
+
+**Write-heavy workloads:** Microservices show significantly higher p95 latency at low-to-medium concurrency (10–50 VUs: 38–78 ms) compared to the monolith (20–31 ms), caused by network overhead from cross-service communication (Cart → Order). At high concurrency (200 VUs) the gap closes — MS p95 48 ms vs. monolith 56 ms.
+
+**Mixed workload:** The monolith delivers more consistent tail latency (p95 9–11 ms across all VUs), while microservices exhibit elevated p95 of up to 20 ms due to inter-service overhead on write paths.
+
+**Summary:** For read-heavy workloads both architectures are equivalent. For write-heavy and mixed scenarios the monolith has a measurable latency advantage due to the absence of network overhead, though this advantage diminishes at high concurrency. The microservices architecture pays a visible latency cost for distributed transactions across service boundaries.

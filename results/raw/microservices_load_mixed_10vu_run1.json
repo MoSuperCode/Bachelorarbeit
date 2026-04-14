@@ -1,0 +1,147 @@
+{
+    "root_group": {
+        "checks": {
+            "products 200": {
+                "name": "products 200",
+                "path": "::products 200",
+                "id": "3534a27ce5029fe37f8cb805b80d20f3",
+                "passes": 401,
+                "fails": 0
+            },
+            "cart add 201": {
+                "fails": 0,
+                "name": "cart add 201",
+                "path": "::cart add 201",
+                "id": "640818dc833ca0dd636af26f41ec2dd9",
+                "passes": 282
+            },
+            "order placed 201": {
+                "name": "order placed 201",
+                "path": "::order placed 201",
+                "id": "c8449f115a1ec28ab21a2d1f6d24c7e8",
+                "passes": 69,
+                "fails": 0
+            }
+        },
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {}
+    },
+    "metrics": {
+        "http_req_duration": {
+            "max": 36.22,
+            "p(90)": 12.8245,
+            "p(95)": 20.445999999999994,
+            "avg": 7.256853723404257,
+            "min": 1.073,
+            "med": 5.263,
+            "thresholds": {
+                "p(95)<3000": false
+            }
+        },
+        "http_req_waiting": {
+            "avg": 7.100232712765944,
+            "min": 0.951,
+            "med": 5.0969999999999995,
+            "max": 36.018,
+            "p(90)": 12.6213,
+            "p(95)": 20.222649999999998
+        },
+        "vus_max": {
+            "value": 10,
+            "min": 10,
+            "max": 10
+        },
+        "http_reqs": {
+            "count": 752,
+            "rate": 12.381248881756719
+        },
+        "iterations": {
+            "count": 683,
+            "rate": 11.245203439148723
+        },
+        "http_req_connecting": {
+            "min": 0,
+            "med": 0,
+            "max": 1.215,
+            "p(90)": 0,
+            "p(95)": 0.5694499999999999,
+            "avg": 0.055139627659574454
+        },
+        "vus": {
+            "value": 10,
+            "min": 10,
+            "max": 10
+        },
+        "http_req_duration{expected_response:true}": {
+            "med": 5.263,
+            "max": 36.22,
+            "p(90)": 12.8245,
+            "p(95)": 20.445999999999994,
+            "avg": 7.256853723404257,
+            "min": 1.073
+        },
+        "http_req_receiving": {
+            "p(90)": 0.149,
+            "p(95)": 0.16745,
+            "avg": 0.1021130319148937,
+            "min": 0.011,
+            "med": 0.1,
+            "max": 0.478
+        },
+        "iteration_duration": {
+            "avg": 884.3409749341147,
+            "min": 503.165541,
+            "med": 1004.499375,
+            "max": 1350.982584,
+            "p(90)": 1263.4174664000045,
+            "p(95)": 1334.2152625
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 752,
+            "thresholds": {
+                "rate<0.05": false
+            },
+            "value": 0
+        },
+        "data_received": {
+            "count": 826163,
+            "rate": 13602.300159439863
+        },
+        "http_req_blocked": {
+            "p(95)": 0.7263499999999998,
+            "avg": 0.08305718085106413,
+            "min": 0.002,
+            "med": 0.014,
+            "max": 1.286,
+            "p(90)": 0.045200000000000136
+        },
+        "http_req_tls_handshaking": {
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0
+        },
+        "checks": {
+            "passes": 752,
+            "fails": 0,
+            "value": 1
+        },
+        "http_req_sending": {
+            "p(95)": 0.10944999999999996,
+            "avg": 0.054507978723404134,
+            "min": 0.009,
+            "med": 0.048,
+            "max": 0.697,
+            "p(90)": 0.079
+        },
+        "data_sent": {
+            "count": 88597,
+            "rate": 1458.6988127353725
+        }
+    }
+}

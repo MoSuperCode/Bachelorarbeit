@@ -36,7 +36,7 @@ export const options = {
   duration: __ENV.DURATION || '60s',
   thresholds: {
     http_req_failed:          ['rate<0.05'],   // tolerate up to 5% errors (stock exhaustion)
-    'http_req_duration{p(95)}': ['p(95)<5000'], // 95th percentile below 5s
+    'http_req_duration':          ['p(95)<5000'], // 95th percentile below 5s
   },
 };
 

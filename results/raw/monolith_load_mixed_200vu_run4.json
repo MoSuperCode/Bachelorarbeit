@@ -1,0 +1,147 @@
+{
+    "metrics": {
+        "http_req_tls_handshaking": {
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0
+        },
+        "http_req_failed": {
+            "fails": 14987,
+            "passes": 53,
+            "thresholds": {
+                "rate<0.05": false
+            },
+            "value": 0.003523936170212766
+        },
+        "http_req_duration{expected_response:true}": {
+            "max": 230.212,
+            "p(90)": 7.073200000000001,
+            "p(95)": 10.259799999999997,
+            "avg": 5.800301194368457,
+            "min": 0.451,
+            "med": 2.864
+        },
+        "data_received": {
+            "count": 16611067,
+            "rate": 271258.1621661661
+        },
+        "http_req_duration": {
+            "p(90)": 7.062600000000002,
+            "p(95)": 10.220199999999998,
+            "avg": 5.79958470744681,
+            "min": 0.451,
+            "med": 2.873,
+            "max": 230.212,
+            "thresholds": {
+                "p(95)<3000": false
+            }
+        },
+        "checks": {
+            "passes": 14987,
+            "fails": 53,
+            "value": 0.9964760638297873
+        },
+        "http_req_connecting": {
+            "p(95)": 0,
+            "avg": 0.0554076462765958,
+            "min": 0,
+            "med": 0,
+            "max": 6.011,
+            "p(90)": 0
+        },
+        "vus": {
+            "min": 5,
+            "max": 200,
+            "value": 5
+        },
+        "http_req_receiving": {
+            "med": 0.034,
+            "max": 0.381,
+            "p(90)": 0.056,
+            "p(95)": 0.065,
+            "avg": 0.03678371010638256,
+            "min": 0
+        },
+        "http_reqs": {
+            "count": 15040,
+            "rate": 245.60269120455285
+        },
+        "data_sent": {
+            "rate": 29936.436913078564,
+            "count": 1833221
+        },
+        "http_req_waiting": {
+            "min": 0.416,
+            "med": 2.817,
+            "max": 228.868,
+            "p(90)": 7.0101,
+            "p(95)": 10.170399999999995,
+            "avg": 5.7381931515957545
+        },
+        "vus_max": {
+            "value": 200,
+            "min": 200,
+            "max": 200
+        },
+        "http_req_blocked": {
+            "avg": 0.06316595744680281,
+            "min": 0.001,
+            "med": 0.006,
+            "max": 6.021,
+            "p(90)": 0.009,
+            "p(95)": 0.011
+        },
+        "iterations": {
+            "count": 13654,
+            "rate": 222.96935809221839
+        },
+        "iteration_duration": {
+            "avg": 885.083873121575,
+            "min": 500.935792,
+            "med": 1001.896354,
+            "max": 1542.237916,
+            "p(90)": 1304.5613293,
+            "p(95)": 1310.85606635
+        },
+        "http_req_sending": {
+            "max": 2.719,
+            "p(90)": 0.027,
+            "p(95)": 0.033,
+            "avg": 0.024607845744679648,
+            "min": 0.003,
+            "med": 0.016
+        }
+    },
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "products 200": {
+                    "name": "products 200",
+                    "path": "::products 200",
+                    "id": "3534a27ce5029fe37f8cb805b80d20f3",
+                    "passes": 8080,
+                    "fails": 32
+                },
+                "cart add 201": {
+                    "name": "cart add 201",
+                    "path": "::cart add 201",
+                    "id": "640818dc833ca0dd636af26f41ec2dd9",
+                    "passes": 5524,
+                    "fails": 18
+                },
+                "order placed 201": {
+                    "passes": 1383,
+                    "fails": 3,
+                    "name": "order placed 201",
+                    "path": "::order placed 201",
+                    "id": "c8449f115a1ec28ab21a2d1f6d24c7e8"
+                }
+            }
+    }
+}

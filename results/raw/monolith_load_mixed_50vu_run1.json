@@ -1,0 +1,147 @@
+{
+    "metrics": {
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 3741,
+            "thresholds": {
+                "rate<0.05": false
+            },
+            "value": 0
+        },
+        "checks": {
+            "passes": 3741,
+            "fails": 0,
+            "value": 1
+        },
+        "data_sent": {
+            "rate": 7354.047067290904,
+            "count": 450872
+        },
+        "vus": {
+            "min": 4,
+            "max": 50,
+            "value": 4
+        },
+        "http_reqs": {
+            "rate": 61.018404511114625,
+            "count": 3741
+        },
+        "http_req_duration{expected_response:true}": {
+            "avg": 4.701493450948936,
+            "min": 0.749,
+            "med": 3.953,
+            "max": 34.444,
+            "p(90)": 7.974,
+            "p(95)": 9.949
+        },
+        "iterations": {
+            "count": 3409,
+            "rate": 55.603245383156846
+        },
+        "data_received": {
+            "count": 4213401,
+            "rate": 68723.60507498927
+        },
+        "vus_max": {
+            "value": 50,
+            "min": 50,
+            "max": 50
+        },
+        "http_req_tls_handshaking": {
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0
+        },
+        "http_req_duration": {
+            "max": 34.444,
+            "p(90)": 7.974,
+            "p(95)": 9.949,
+            "avg": 4.701493450948936,
+            "min": 0.749,
+            "med": 3.953,
+            "thresholds": {
+                "p(95)<3000": false
+            }
+        },
+        "http_req_receiving": {
+            "p(90)": 0.076,
+            "p(95)": 0.086,
+            "avg": 0.04930633520449109,
+            "min": 0.008,
+            "med": 0.047,
+            "max": 0.612
+        },
+        "iteration_duration": {
+            "p(95)": 1314.006942,
+            "avg": 886.5846469158093,
+            "min": 501.259334,
+            "med": 1002.820333,
+            "max": 1332.507083,
+            "p(90)": 1022.2341000000001
+        },
+        "http_req_sending": {
+            "med": 0.022,
+            "max": 0.477,
+            "p(90)": 0.042,
+            "p(95)": 0.05,
+            "avg": 0.02524538893344062,
+            "min": 0.003
+        },
+        "http_req_blocked": {
+            "max": 1.259,
+            "p(90)": 0.013,
+            "p(95)": 0.016,
+            "avg": 0.018178027265437408,
+            "min": 0.001,
+            "med": 0.007
+        },
+        "http_req_connecting": {
+            "max": 0.825,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0.008333600641539696,
+            "min": 0,
+            "med": 0
+        },
+        "http_req_waiting": {
+            "avg": 4.62694172681101,
+            "min": 0.707,
+            "med": 3.866,
+            "max": 34.414,
+            "p(90)": 7.884,
+            "p(95)": 9.88
+        }
+    },
+    "root_group": {
+        "groups": {},
+        "checks": {
+                "products 200": {
+                    "fails": 0,
+                    "name": "products 200",
+                    "path": "::products 200",
+                    "id": "3534a27ce5029fe37f8cb805b80d20f3",
+                    "passes": 2065
+                },
+                "cart add 201": {
+                    "passes": 1344,
+                    "fails": 0,
+                    "name": "cart add 201",
+                    "path": "::cart add 201",
+                    "id": "640818dc833ca0dd636af26f41ec2dd9"
+                },
+                "order placed 201": {
+                    "passes": 332,
+                    "fails": 0,
+                    "name": "order placed 201",
+                    "path": "::order placed 201",
+                    "id": "c8449f115a1ec28ab21a2d1f6d24c7e8"
+                }
+            },
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e"
+    }
+}

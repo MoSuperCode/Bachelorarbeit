@@ -26,7 +26,7 @@ export const options = {
   duration: __ENV.DURATION || '60s',
   thresholds: {
     http_req_failed:          ['rate<0.01'],   // error rate below 1%
-    'http_req_duration{p(95)}': ['p(95)<2000'], // 95th percentile below 2s
+    'http_req_duration':          ['p(95)<2000'], // 95th percentile below 2s
   },
 };
 

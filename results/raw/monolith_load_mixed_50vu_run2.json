@@ -1,0 +1,147 @@
+{
+    "root_group": {
+        "groups": {},
+        "checks": {
+                "products 200": {
+                    "name": "products 200",
+                    "path": "::products 200",
+                    "id": "3534a27ce5029fe37f8cb805b80d20f3",
+                    "passes": 2056,
+                    "fails": 0
+                },
+                "cart add 201": {
+                    "name": "cart add 201",
+                    "path": "::cart add 201",
+                    "id": "640818dc833ca0dd636af26f41ec2dd9",
+                    "passes": 1345,
+                    "fails": 0
+                },
+                "order placed 201": {
+                    "name": "order placed 201",
+                    "path": "::order placed 201",
+                    "id": "c8449f115a1ec28ab21a2d1f6d24c7e8",
+                    "passes": 335,
+                    "fails": 0
+                }
+            },
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "metrics": {
+        "data_received": {
+            "count": 4199119,
+            "rate": 68490.01302333556
+        },
+        "iteration_duration": {
+            "min": 501.055166,
+            "med": 1003.017917,
+            "max": 1445.847709,
+            "p(90)": 1127.392167,
+            "p(95)": 1315.047667,
+            "avg": 888.48627986063
+        },
+        "checks": {
+            "passes": 3736,
+            "fails": 0,
+            "value": 1
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 3736,
+            "thresholds": {
+                "rate<0.05": false
+            },
+            "value": 0
+        },
+        "vus": {
+            "value": 3,
+            "min": 3,
+            "max": 50
+        },
+        "http_req_sending": {
+            "avg": 0.028250535331906274,
+            "min": 0.004,
+            "med": 0.025,
+            "max": 0.371,
+            "p(90)": 0.045,
+            "p(95)": 0.054
+        },
+        "http_req_waiting": {
+            "avg": 6.0699539614561075,
+            "min": 0.702,
+            "med": 3.851,
+            "max": 131.184,
+            "p(90)": 8.139000000000001,
+            "p(95)": 10.434999999999999
+        },
+        "http_req_duration": {
+            "min": 0.754,
+            "med": 3.934,
+            "max": 131.223,
+            "p(90)": 8.2545,
+            "p(95)": 10.524,
+            "avg": 6.151951017130635,
+            "thresholds": {
+                "p(95)<3000": false
+            }
+        },
+        "http_req_tls_handshaking": {
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0
+        },
+        "http_req_duration{expected_response:true}": {
+            "p(90)": 8.2545,
+            "p(95)": 10.524,
+            "avg": 6.151951017130635,
+            "min": 0.754,
+            "med": 3.934,
+            "max": 131.223
+        },
+        "iterations": {
+            "count": 3401,
+            "rate": 55.47223936553459
+        },
+        "http_reqs": {
+            "count": 3736,
+            "rate": 60.93627940889069
+        },
+        "vus_max": {
+            "value": 50,
+            "min": 50,
+            "max": 50
+        },
+        "http_req_receiving": {
+            "p(95)": 0.089,
+            "avg": 0.053746520342612604,
+            "min": 0.011,
+            "med": 0.051,
+            "max": 0.67,
+            "p(90)": 0.079
+        },
+        "http_req_blocked": {
+            "min": 0.002,
+            "med": 0.008,
+            "max": 1.431,
+            "p(90)": 0.014,
+            "p(95)": 0.017,
+            "avg": 0.02079898286937939
+        },
+        "data_sent": {
+            "count": 450790,
+            "rate": 7352.640630282076
+        },
+        "http_req_connecting": {
+            "med": 0,
+            "max": 0.969,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0.009125535331905785,
+            "min": 0
+        }
+    }
+}
